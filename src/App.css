@@ -1,5 +1,142 @@
 .App {
   text-align: center;
+
+}
+.homeButton {
+  margin-left: 5px;
+}
+
+
+.choresButton {
+  margin-right:  5px;
+  margin-left: 55px;
+
+}
+
+.deleteText {
+  color: red;
+}
+
+.logOutButton {
+  margin-left: 5px;
+  margin-right:  10px;
+
+}
+.faqBack {
+  align-items: center;
+  justify-content: center;
+}
+
+.canvas {
+	cursor: crosshair;
+	display: block;
+}
+
+.welcome {
+  display: block;
+  text-align: center;
+ margin-left: auto;
+ margin-right: auto;
+ width: 80%;
+ margin-top: 50px;
+
+}
+
+.kidStars {
+  width: 5%;
+}
+
+.starsOfKids {
+  width: 5%;
+}
+
+.whatsSelected {
+  border-style: solid;
+  border-color: #e0e0e0;
+
+}
+
+
+.list-group-horizontal:hover{
+
+select:
+}
+
+.selectedStar {
+  width: 10%;
+
+
+}
+
+
+.showStars {
+
+  width: 20%;
+  padding-bottom: 10px
+}
+
+.showStar {
+  width: 10%;
+}
+
+.showStars:hover {
+
+animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+
+}
+
+.carousel {
+  width: 40%;
+  height: 100%;
+}
+
+.letsGetStars {
+
+  text-align: center;
+  color: green;
+}
+
+.starEqualAward {
+  color: red;
+}
+
+.AddKidForm {
+  display: block;
+ margin-left: auto;
+ margin-right: auto;
+ width: 40%;
+ margin-top: 50px;
+}
+.signUpForm {
+
+  border-color: grey;
+  text-align: center;
+  color: #03c0ae
+
+
+
+
+
+}
+
+
+
+.password {
+  text-align: left;
+}
+
+.Star_Chart_Logo {
+  height: 12vmin;
+  padding-bottom: 10px;
+}
+
+.signUpPage {
+  display: inline-block;
+  align-content: center;
+  background-color:  #ffffff4a!important;
 }
 
 .App-logo {
@@ -8,15 +145,93 @@
   pointer-events: none;
 }
 
+.kid_container {
+  background-color: #ffffff;
+  border-style: solid;
+  border-color: blue;
+margin-top: 55px;
+  width: 600px;
+
+
+}
+
+.addChildForm {
+  background-color: #ffffff;
+  text-align: center
+}
+
+
+
+.kidAddButton {
+  display: block;
+ margin-left: auto;
+ margin-right: auto;
+ width: 20%;
+
+}
+
+.home {
+  background-image: url('./images/HomeBackground.jpg');
+  background-size: cover;
+  background-position: center center;
+  position:  inherit;
+
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  z-index: -10;
+  min-height: 50vh;
+
+  border-style: ridge;
+}
+
+
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #ffffff;
+  background-image: url('./images/Boy.jpg');
+  background-size: cover;
+  background-position: center center;
+  position:  inherit;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  z-index: -10;
+  min-height: 50vh;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+
+
+.navbar{
+    background-color: #f9eb90;
+    border-color: #E7E7E7;
+
+}
+.navbar-brand {
+  background-color: #f9eb90;
+  border-color: #E7E7E7;
+  color: black;
+  margin-right: 0px;
+  padding-top: 8px;
+}
+
+.signup {
+
+}
+.App-two {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+
 }
 
 .App-link {
@@ -29,5 +244,23 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
   }
 }
