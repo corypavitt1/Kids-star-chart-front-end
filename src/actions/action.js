@@ -18,7 +18,7 @@ export function getckss() {
   let token = localStorage.getItem("token")
   return (dispatch) => {
       dispatch({ type: 'LOADING_STARS' });
-    return fetch (`${BASE_URL}/cks`}, {
+    return fetch (`${BASE_URL}/cks`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
