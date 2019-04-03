@@ -18,7 +18,7 @@ export function getckss() {
   let token = localStorage.getItem("token")
   return (dispatch) => {
       dispatch({ type: 'LOADING_STARS' });
-    return fetch (`${BASE_URL}/cks`, {
+    return fetch (`${BASE_URL}api/v1/cks`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -50,7 +50,7 @@ export function submitForm(data) {
   let token = localStorage.getItem("token")
   return (dispatch) => {
     dispatch({ type: 'LOADING_STARS' });
-    return fetch (`${BASE_URL}/cks`, {
+    return fetch (`${BASE_URL}/api/v1/cks`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -82,7 +82,7 @@ export function getStars() {
   let token = localStorage.getItem("token")
   return (dispatch) => {
     dispatch({ type: 'LOADING_CATS' });
-    return fetch (`${BASE_URL}/stars`, {
+    return fetch (`${BASE_URL}/api/v1/stars`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
