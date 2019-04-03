@@ -1,4 +1,4 @@
-const BASE_URL = "https://kids-reward-star-chart.herokuapp.com/"
+const BASE_URL = "https://kids-reward-star-chart.herokuapp.com"
 //----------choreslected true of false------
 
 export function choresSelected() {
