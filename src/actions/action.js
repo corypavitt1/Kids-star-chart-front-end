@@ -111,7 +111,7 @@ export function addChore(choreName) {
   console.log("addchore action", choreName)
   let token = localStorage.getItem("token")
   return (dispatch) => {
-    return fetch (`${BASE_URL}/chores`, {
+    return fetch (`${BASE_URL}/api/v1/chores`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
