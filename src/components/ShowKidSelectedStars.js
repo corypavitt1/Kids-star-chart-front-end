@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
-class ShowKidSelectedStars extends Component {
+const ShowKidSelectedStars = props => {
 
 
 
 
-render (){
+
 
               console.log("show Kid Selected Stars fired", this.props)
                 let x = () => this.props.stars.map(star => {
@@ -20,7 +20,7 @@ render (){
                                   );
 
 
-}
+
 }
 
 

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-class LogginInUser  extends Component {
+const LogginInUser = props => {
 
-render(){
+
     return (
       <div>Loading user.....</div>
     );
-  }
+
 
 }
 

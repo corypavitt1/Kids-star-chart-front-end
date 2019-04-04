@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 
-class IsLoading extends Component {
+const IsLoading = props =>  {
 
-render() {
+
     console.log("isLoading hit")
     return (
 
       <div>Loading please wait...</div>
     );
-}
+
 
 }
 
