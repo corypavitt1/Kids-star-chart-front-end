@@ -47,7 +47,7 @@ export function getckss() {
 export function submitForm(data) {
   console.log("create stars and chores", data)
 
-  playSound =() =>{
+  const playSound =() =>{
     console.log("yes sound fired function")
    const audio = new Audio("https://kids-star-chart.herokuapp.com//Audio/kidsCheering.mp3")
    audio.play()
