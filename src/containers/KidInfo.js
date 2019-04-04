@@ -58,9 +58,10 @@ submitForm = (e) => {
     choreId: [],
 
   })
-  {this.state.starSelected.length > 0 || this.state.choreSelected.length > 0 ?
-  this.playSound(): null
+  if (this.state.starSelected.length > 0 && this.state.choreSelected.length > 0) {
+  this.playSound()
 }
+
 }
 
 handleSelectedChore = (e) => {
