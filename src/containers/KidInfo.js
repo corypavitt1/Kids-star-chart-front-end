@@ -43,7 +43,7 @@ kidId: this.props.getSelectedKid.id
     const nextState = store.getState()
 
     if (prevState.getSelectedKid.star.length < nextState.getSelectedKid.star.length) {
-      playSound()
+      this.playSound()
     }
 
     prevState = nextState
