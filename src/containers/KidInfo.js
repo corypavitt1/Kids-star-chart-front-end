@@ -31,25 +31,7 @@ kidId: this.props.getSelectedKid.id
   }
 
 
- playSound =() =>{
-   console.log("yes sound fired function")
-  const audio = new Audio("https://kids-star-chart.herokuapp.com//Audio/kidsCheering.mp3")
-  audio.play()
-}
-
- createSoundObserver = (store)=> {
-  let prevState = store.getState()
-
-  return store.subscribe(() => {
-    const nextState = store.getState()
-
-    if (prevState.getSelectedKid.star.length < nextState.getSelectedKid.star.length) {
-      this.playSound()
-    }
-
-    prevState = nextState
-  })
-}
+ 
 
 starSelected = (e) => {
 this.setState({
