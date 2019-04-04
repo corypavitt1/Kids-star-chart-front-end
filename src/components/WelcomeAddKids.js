@@ -5,7 +5,7 @@ const WelcomeAddKids = props => {
 
     return (
 
-      <h1 className="welcome">Welcome {this.props.user.family_name} family,  Lets add some Kids</h1>
+      <h1 className="welcome">Welcome {props.user.family_name} family,  Lets add some Kids</h1>
 
     );
 

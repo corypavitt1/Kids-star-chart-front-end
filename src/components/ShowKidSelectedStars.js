@@ -7,8 +7,8 @@ const ShowKidSelectedStars = props => {
 
 
 
-              console.log("show Kid Selected Stars fired", this.props)
-                let x = () => this.props.stars.map(star => {
+              console.log("show Kid Selected Stars fired", props)
+                let x = () => props.stars.map(star => {
 
                     return <img className="kidStars" src={star.url} alt=""/>
 
@@ -16,7 +16,7 @@ const ShowKidSelectedStars = props => {
 
                   })
                               return (
-                                  <div>{this.props.firstName}'s stars{x()}</div>
+                                  <div>{props.firstName}'s stars{x()}</div>
                                   );
 
 
