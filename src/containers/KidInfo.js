@@ -48,7 +48,7 @@ this.setState({
 submitForm = (e) => {
   console.log("submit form",this.state)
   e.preventDefault()
-  audio.play()
+  this.playSound()
   this.props.submitForm(this.state)
 
   this.setState({
