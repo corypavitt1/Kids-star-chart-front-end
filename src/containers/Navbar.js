@@ -44,12 +44,12 @@ class Navbar extends Component {
 
 
 
-<a href="#" onClick={this.handleSignOutClick} className="logOutButton btn-lg btn-success">
+<button href="#" onClick={this.handleSignOutClick} className="logOutButton btn-lg btn-success">
 
 
                    Sign Out
 
-                    </a>
+                    </button>
 
 
 
