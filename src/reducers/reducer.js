@@ -111,7 +111,7 @@ export default function reducer(
 
          case "LOG_USER_OUT":
          localStorage.clear()
-         return {...state, isLoggedIn: false, user: action.payload}
+         return {...state, loggedIn: false, user: action.payload}
 
 
 
