@@ -31,7 +31,11 @@ kidId: this.props.getSelectedKid.id
   }
 
 
- 
+  const playSound =() =>{
+
+   const audio = new Audio("https://kids-star-chart.herokuapp.com//Audio/kidsCheering.mp3")
+   audio.play()
+  }
 
 starSelected = (e) => {
 this.setState({
@@ -44,6 +48,7 @@ this.setState({
 submitForm = (e) => {
   console.log("submit form",this.state)
   e.preventDefault()
+  audio.play()
   this.props.submitForm(this.state)
 
   this.setState({
