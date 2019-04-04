@@ -48,7 +48,8 @@ this.setState({
 submitForm = (e) => {
   console.log("submit form",this.state)
   e.preventDefault()
-
+  if (this.state.starSelected.length > 0 && this.state.choreSelected.length > 0) {
+  this.playSound()
   this.props.submitForm(this.state)
 
   this.setState({
@@ -58,8 +59,7 @@ submitForm = (e) => {
     choreId: [],
 
   })
-  if (this.state.starSelected.length > 0 && this.state.choreSelected.length > 0) {
-  this.playSound()
+
 }
 
 }
