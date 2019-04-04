@@ -48,7 +48,7 @@ export function submitForm(data) {
   console.log("create stars and chores", data)
 
   const playSound =() =>{
-    console.log("yes sound fired function")
+
    const audio = new Audio("https://kids-star-chart.herokuapp.com//Audio/kidsCheering.mp3")
    audio.play()
   }
@@ -79,8 +79,8 @@ export function submitForm(data) {
     .then(res => {
       console.log("action submit cks", data)
       if (res.status === 200) {
-        alert("yes it worked") }
         playSound()
+       }
       dispatch(selectedKid(data.kidId))
     })
   }
