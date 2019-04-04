@@ -17,7 +17,7 @@ class Navbar extends Component {
   let token = localStorage.getItem("token")
     localStorage.removeItem("token")
     console.log("logout fired")
-    return ( <Redirect to="/"/> )
+    return ( <Redirect to="https://kids-star-chart.herokuapp.com/login"/> )
 
   }
   render() {
