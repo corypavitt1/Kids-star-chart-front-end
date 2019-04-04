@@ -15,9 +15,9 @@ class Navbar extends Component {
 
   handleSignOutClick = () => {
   let token = localStorage.getItem("token")
-    localStorage.removeItem("token")
+    localStorage.clear()
     console.log("logout fired")
-    return ( <Redirect to="https://kids-star-chart.herokuapp.com/login"/> )
+    return ( <Redirect to="/login"/> )
 
   }
   render() {
@@ -44,7 +44,7 @@ class Navbar extends Component {
 
 
 
-<button href="/login" onClick={this.handleSignOutClick} className="logOutButton btn-lg btn-success">
+<button href="#" onClick={this.handleSignOutClick} className="logOutButton btn-lg btn-success">
 
 
                    Sign Out
