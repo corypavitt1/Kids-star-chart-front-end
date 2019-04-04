@@ -109,6 +109,10 @@ export default function reducer(
          console.log("newKidsArray", newKidsArray)
          return {...state, userKids: newKidsArray}
 
+         case "LOG_USER_OUT":
+         localStorage.clear()
+         return {...state, isLoggedIn: false, user: action.payload}
+
 
 
         default:

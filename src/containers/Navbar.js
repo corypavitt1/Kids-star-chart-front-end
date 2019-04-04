@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from '../images/logo.png';
 import {connect} from 'react-redux'
 import {getChores} from '../actions/action.js'
+import {logUserOut} form '../actions/action.js'
 import {choresSelected} from '../actions/action.js'
 import { Redirect} from 'react-router-dom'
 class Navbar extends Component {
@@ -14,10 +15,9 @@ class Navbar extends Component {
 
 
   handleSignOutClick = () => {
-  let token = localStorage.getItem("token")
-    localStorage.clear()
+
     console.log("logout fired")
-    return ( <Redirect to="/login"/> )
+  this.props.logUserout()
 
   }
   render() {
@@ -70,7 +70,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     getChores: () => dispatch(getChores()),
-    choresSelected: () => dispatch(choresSelected())
+    choresSelected: () => dispatch(choresSelected()),
+    logUserOut: () => dispatch(logUserOut())
   }
 }
 

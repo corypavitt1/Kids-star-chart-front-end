@@ -469,3 +469,13 @@ export const getKid=(id) =>{
               }))
             }
         }
+
+
+export const logUserOut = () => {
+  console.log("loguserout  fired")
+  return (dispatch) => {
+    dispatch({
+      type: "LOG_USER_OUT", payload: {}
+    })
+  }
+}
