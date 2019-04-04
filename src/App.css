@@ -146,7 +146,7 @@ animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
 }
 
 .kid_container {
-  background-color: #ffffffab!important;
+  background-color: #ffffffc2!important;
   border-style: solid;
   border-color: blue;
 margin-top: 55px;
@@ -155,8 +155,12 @@ margin-top: 55px;
 
 }
 
+.container {
+  background-color: #ffffffc2!important;
+}
+
 .addChildForm {
-  background-color: #ffffff;
+  background-color: #ffffffc2!important;
   text-align: center
 }
 
