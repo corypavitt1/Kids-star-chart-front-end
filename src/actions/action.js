@@ -69,7 +69,7 @@ export function submitForm(data) {
     .then(res => {
       console.log("action submit cks", data)
       if (res.status === 200) {
-        alert("yes it worked")
+        alert("yes it worked") }
       dispatch(selectedKid(data.kidId))
     })
   }
