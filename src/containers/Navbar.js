@@ -17,7 +17,7 @@ class Navbar extends Component {
   handleSignOutClick = () => {
 
     console.log("logout fired")
-  this.props.logUserout()
+  this.props.logUserOut()
 
   }
   render() {
