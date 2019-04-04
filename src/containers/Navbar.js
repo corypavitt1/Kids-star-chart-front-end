@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from '../images/logo.png';
 import {connect} from 'react-redux'
 import {getChores} from '../actions/action.js'
-import {logUserOut} form '../actions/action.js'
+import {logUserOut} from '../actions/action.js'
 import {choresSelected} from '../actions/action.js'
 import { Redirect} from 'react-router-dom'
 class Navbar extends Component {
