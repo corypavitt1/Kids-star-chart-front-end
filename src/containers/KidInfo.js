@@ -21,6 +21,7 @@ console.log("kidinfo did mount fired",)
 
   }
 
+
   state= {
     starSelected: [],
     starSelectedSrc: "",
@@ -28,6 +29,26 @@ console.log("kidinfo did mount fired",)
     choreId: [],
 kidId: this.props.getSelectedKid.id
   }
+
+
+ playSound =() =>{
+  const audio = new Audio("https://kids-star-chart.herokuapp.com//Audio/kidsCheering.mp3")
+  audio.play()
+}
+
+ createSoundObserver = (store)=> {
+  let prevState = store.getState()
+
+  return store.subscribe(() => {
+    const nextState = store.getState()
+
+    if (prevState.getSelectedKid.star.length < nextState.getSelectedKid.star.length) {
+      playSound()
+    }
+
+    prevState = nextState
+  })
+}
 
 starSelected = (e) => {
 this.setState({
