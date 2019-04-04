@@ -3,14 +3,14 @@ import WOW from 'wow.js'
 import logo from '../images/logo.png';
 
 
-const LogoAndTitle = props => {
+class LogoAndTitle extends Component{
 
   componentDidMount(){
     const wow = new WOW();
     wow.init();
   }
 
-
+render() {
     return (
       <div>
       <header className="App-two wow rubberBand"   animation-delay="3" data-wow-offset="1"  data-wow-iteration="1">
@@ -29,7 +29,7 @@ const LogoAndTitle = props => {
 
       </div>
     );
-  
+  }
 
 }
 
