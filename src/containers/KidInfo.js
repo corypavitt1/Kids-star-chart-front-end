@@ -121,8 +121,8 @@ handleSelectedChore = (e) => {
       </div>
 
 
-      <div className="container kid_container  shadow-lg p-3 mb-5 bg-white rounded border " >{this.props.getSelectedKid.first_name}, GET YOUR STARS HERE:
-{this.state.choreSelected.length | this.state.starSelected.length > 0 &&
+      <div className="container kid_container  shadow-lg p-3 mb-5 bg-white rounded border " >Hi {this.props.getSelectedKid.first_name}!
+{ this.state.starSelected.length > 0 &&
       <div className="whatsSelected rounded-lg">
       <img className="selectedStar" src={this.state.starSelectedSrc} alt={this.state.starSelected}/> {this.state.choreSelected}
       </div>
