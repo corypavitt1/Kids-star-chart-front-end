@@ -32,6 +32,7 @@ kidId: this.props.getSelectedKid.id
 
 
  playSound =() =>{
+   console.log("yes sound fired function")
   const audio = new Audio("https://kids-star-chart.herokuapp.com//Audio/kidsCheering.mp3")
   audio.play()
 }
