@@ -101,7 +101,7 @@ export default function reducer(
         case "LOG_IN_USER":
         localStorage.clear()
       localStorage.setItem("token", action.payload.jwt)
-        return {...state, user: action.payload.user, userKids:action.payload.user.kids, getChores:action.payload.user.chores, loggedIn: true}
+        return {...state, user: action.payload.user, userKids:action.payload.user.kids, getChores:action.payload.user.chores, loggedIn: true, isLoggingIn: false }
 
          case "DELETE_CHILD":
          console.log("reducer Delete Child", parseInt(action.payload))
