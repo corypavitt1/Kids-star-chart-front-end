@@ -1,5 +1,5 @@
-// const BASE_URL = "https://kids-reward-star-chart.herokuapp.com"
-const BASE_URL = "http://localhost:3000/"
+ const BASE_URL = "https://kids-reward-star-chart.herokuapp.com"
+//const BASE_URL = "http://localhost:3000/"
 //----------choreslected true of false------
 
 export function choresSelected() {
