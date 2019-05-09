@@ -7,7 +7,8 @@ import {getUser} from './actions/action.js'
 import Login from './containers/Login.js'
 import {connect} from 'react-redux'
 import About from './components/About.js'
-
+import KidContainer from './containers/KidContainer.js'
+import Navbar from './containers/Navbar.js'
 import Home from './containers/Home'
 import WOW from 'wow.js'
 import LogoAndTitle from './components/logoAndTitle.js'
@@ -40,11 +41,12 @@ state={
 
 
   render() {
-const isLoggedIn = this.props.loggedIn;
-if (isLoggedIn) {
-  return <Home />
+      const isLoggedIn = this.props.loggedIn;
+        if (isLoggedIn) {
+        return          <Route  path='/' component={Home}/>
 
-}
+
+                        }
 else {
 
 
@@ -53,9 +55,10 @@ else {
 
         <div>
         <Switch>
-            <Route  path='/about/' component={About}/>
-        <Route  path='/Login/' component={Login}/>
+        <Route  path='/about/' component={About}/>
+        <Route  path='/login/' component={Login}/>
         <Route  path='/signup/' component={SignUp}/>
+
         <Route  exact path='/' component={SignUp}/>
         </Switch>
         </div>

@@ -10,13 +10,11 @@ class KidContainer extends Component{
 
 
 
-
         // let x = Object.values(this.props.userKids)
         // let val = () =>  this.props.userKids.map(kid => {
         //   return (<Kid id={kid.id} kid={kid} />)
         // })
 render (){
-    console.log("kidContainer fired", this.props)
 
 
 

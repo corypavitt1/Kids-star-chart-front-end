@@ -6,7 +6,7 @@ const ChoresList= props => {
 
 
 
-    console.log("choresList", props.chores)
+
 
      let allChores = () => props.chores.map(chore => {
       return <ul class="list-group" key={chore.id}>

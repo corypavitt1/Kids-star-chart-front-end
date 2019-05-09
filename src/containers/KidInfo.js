@@ -15,7 +15,6 @@ import IsLoading from '../components/IsLoading.js'
 class KidInfo extends Component {
 
   componentDidMount(){ //This gets all pre-made stars
-console.log("kidinfo did mount fired",)
     this.props.getStars()
 
 
@@ -46,12 +45,11 @@ this.setState({
 }
 
 submitForm = (e) => {
-  console.log("submit form",this.state)
   e.preventDefault()
   if (this.state.starSelected.length > 0 && this.state.choreId.length > 0) {
   this.playSound()
 }
-  this.props.submitForm(this.state)
+  this.props.submitForm(this.state,this.props.user.id)
 
   this.setState({
     starSelected: [],
@@ -67,7 +65,6 @@ submitForm = (e) => {
 
 handleSelectedChore = (e) => {
 
-  console.log("selected Chore", e.target.value)
   this.setState({
     choreSelected: e.target.name,
     choreId: e.target.value
@@ -77,7 +74,6 @@ handleSelectedChore = (e) => {
 
 
   render() {
-    console.log("kidinfo fired", this.props)
 
 
 
@@ -202,7 +198,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     getStars: () => dispatch(getStars()),
-    submitForm: (data) => dispatch(submitForm(data)),
+    submitForm: (data,id) => dispatch(submitForm(data,id)),
     getckss: () => dispatch(getckss()),
     getKid: ()=> dispatch(getKid())  }
 }

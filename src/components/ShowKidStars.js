@@ -19,15 +19,15 @@ componentDidMount() {
  }
 
   render() {
-    console.log("show kid stars",this.props)
+
 
     if(this.state.stars == undefined){
-      console.log("yesss")
+
 
     this.setState({
       stars: []
     })
-    console.log("after setState",this.state)
+
 return <div><img className="kidStars" src={this.state.stars} alt="star"></img></div>
     }
 
@@ -35,7 +35,7 @@ return <div><img className="kidStars" src={this.state.stars} alt="star"></img></
 let starCount = 0
 
 let x = () => this.state.stars.map(stars => {
-  console.log("yes 2")
+
    starCount = starCount + 1
 
   return <img className="kidStars" src={stars.url} alt="star"/>
@@ -50,7 +50,7 @@ let x = () => this.state.stars.map(stars => {
       <div className=" wow pulse" data-wow-offset="1"  data-wow-iteration="1">
 
 
-      <div>{x()}  YOU HAVE {starCount} {starCount ==1 ? "star": "stars"}</div>
+      <div>{x()}</div>
 
 
       </div>

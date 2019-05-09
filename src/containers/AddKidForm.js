@@ -9,8 +9,8 @@ state= {
   firstName: "",
   lastName: "",
   birthday:"",
-  user_id: this.props.user.id,
-  stars: [],
+  userId: this.props.user.id,
+
 
 
 }
@@ -23,18 +23,21 @@ componentDidMount() {
 
 handleFormChange = (event) => {
 
-  console.log(event.target.value);
+
   this.setState({
     [event.target.name]: event.target.value
   })
-  console.log(this.state)
+
 }
 
 
 submitForm=(event) => {
-  console.log("submitform fired")
+
   event.preventDefault()
+
   this.props.addChild(this.state)
+
+
   this.setState({
     firstName: "",
     lastName: "",
@@ -44,7 +47,7 @@ submitForm=(event) => {
 
 
   render() {
-    console.log("kidform",this.props.user.id)
+
     return (
       <div>
 

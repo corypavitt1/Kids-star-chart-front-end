@@ -2,7 +2,7 @@ import React from 'react'
 
 const About = props => {
 
-  console.log("About page render")
+
 return (
   <div className="App-heaer">
   <div className="signUpPage shadow-lg p-3 mb-5 bg-white rounded border wow rubberBand " data-wow-offset="1"  data-wow-iteration="1">

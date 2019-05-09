@@ -22,21 +22,18 @@ class SignUp extends Component {
    }
 
   handleEmailChange = event => {
-  console.log(event.target.value)
   this.setState({
     email: event.target.value
   })
 }
 
 handlePasswordChange = (event) => {
-  console.log(event.target.value);
   this.setState({
     password: event.target.value
   })
 }
 
 handlefamilyNameChange = event => {
-    console.log(event.target.value);
   this.setState({
     familyName: event.target.value
   })
@@ -54,13 +51,10 @@ this.setState({
 
   render() {
 
-      // console.log("render first", this.props);
-      // if(this.props.loggedIn === true) {
-      //   return <Login/>
-      // }
+    
 
 
-    console.log(" rendering signup", this.props)
+
     return (
       <div>
 <div className="signUpPage shadow-lg p-3 mb-5 bg-white rounded border wow bounceInUp " data-wow-offset="1"  data-wow-iteration="1">

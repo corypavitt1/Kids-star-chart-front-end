@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import {addChore} from '../actions/action.js'
+import {choresSelected} from '../actions/action.js'
 import ChoresList from '../components/ChoresList.js'
 
 class Chores extends Component {
@@ -8,7 +9,17 @@ class Chores extends Component {
 state={
   addChoreButtonClicked: false,
   choreName: "",
-  id: this.props.user.id
+  id: this.props.user.id,
+  choresSelected: this.props.choresSelected
+}
+
+
+closeChoresClick = () => {
+this.props.choresSelected()
+
+
+
+
 }
 
 buttonClick = () => {
@@ -18,7 +29,6 @@ buttonClick = () => {
 }
 
 handleChange =(e) => {
-  console.log(e.target.value)
   this.setState({
     choreName: e.target.value
   })
@@ -33,7 +43,6 @@ handleSubmit = (event) => {
 }
 
   render() {
-    console.log("Chores page", this.props.getChores)
     return (
       <div className="container kidinfo_container  shadow-lg p-3 mb-5 bg-white rounded border " >
       <div className="  container  shadow-lg p-3 mb-5 bg-white rounded border">
@@ -56,7 +65,7 @@ handleSubmit = (event) => {
 
 
       </div>
-      <button  type="button" className="kidAddButton  btn btn-success btn-lg shadow-lg" onClick={this.buttonClick}>+</button>
+      <button  type="button" className="kidAddButton  btn btn-success btn-lg shadow-lg" onClick={this.closeChoresClick}>Close Chores</button>
 
 
 
@@ -85,7 +94,8 @@ const mapStateToProps =(state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addChore: (chore) => dispatch(addChore(chore))
+    addChore: (chore) => dispatch(addChore(chore)),
+    choresSelected: () => dispatch(choresSelected())
   }
 }
 

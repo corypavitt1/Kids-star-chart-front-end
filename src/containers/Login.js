@@ -13,14 +13,12 @@ class Login extends Component {
 
 
   handleEmailChange = (event) => {
-    console.log(event.target.value)
     this.setState({
       username: event.target.value
     })
   }
 
   handlePasswordChange = (event) => {
-    console.log(event.target.value)
     this.setState({
       password: event.target.value
     })
@@ -44,7 +42,6 @@ class Login extends Component {
 
 
   render() {
-    console.log("rendering login", this.props.isLoggingIn)
     return (
       <div className="App-heaer">
       <div className="signUpPage shadow-lg p-3 mb-5 bg-white rounded border wow rubberBand " data-wow-offset="1"  data-wow-iteration="1">

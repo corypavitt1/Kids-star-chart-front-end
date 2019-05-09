@@ -1,4 +1,5 @@
-const BASE_URL = "https://kids-reward-star-chart.herokuapp.com"
+// const BASE_URL = "https://kids-reward-star-chart.herokuapp.com"
+const BASE_URL = "http://localhost:3000/"
 //----------choreslected true of false------
 
 export function choresSelected() {
@@ -14,7 +15,7 @@ export function choresSelected() {
 //-----------getcks------------------
 
 export function getckss() {
-  console.log("get cks")
+
   let token = localStorage.getItem("token")
   return (dispatch) => {
       dispatch({ type: 'LOADING_STARS' });
@@ -30,7 +31,7 @@ export function getckss() {
     })
     .then(response => response.json())
     .then(res => {
-      console.log("action getting cks", res)
+
 
       dispatch({
         type: "GET_CKS", payload: res
@@ -44,13 +45,7 @@ export function getckss() {
 
 //--------------create cks ---------
 
-export function submitForm(data) {
-  console.log("create stars and chores", data)
-
-
-
-
-
+export function submitForm(data,id) {
 
 
   let token = localStorage.getItem("token")
@@ -73,11 +68,15 @@ export function submitForm(data) {
     })
     .then(response => response.json())
     .then(res => {
-      console.log("action submit cks", data)
+
       if (res.status === 200) {
-        
+
+        dispatch(selectedKid(data.kidId))
+        dispatch(getUserAgain(id))
+
+
        }
-      dispatch(selectedKid(data.kidId))
+
     })
   }
 }
@@ -87,7 +86,7 @@ export function submitForm(data) {
 //---------------getStars-----------
 
 export function getStars() {
-  console.log("getStars")
+
   let token = localStorage.getItem("token")
   return (dispatch) => {
     dispatch({ type: 'LOADING_CATS' });
@@ -102,7 +101,7 @@ export function getStars() {
     })
     .then(response => response.json())
     .then(res => {
-      console.log("getStars", res)
+
       dispatch({
         type: "GET_STARS", payload: res
       })
@@ -117,7 +116,6 @@ export function getStars() {
 
 //----------addChore---------------
 export function addChore(choreName) {
-  console.log("addchore action", choreName)
   let token = localStorage.getItem("token")
   return (dispatch) => {
     return fetch (`${BASE_URL}/api/v1/chores`, {
@@ -135,7 +133,6 @@ export function addChore(choreName) {
     })
     .then(response => response.json())
     .then(res => {
-      console.log("add chore response",res)
       dispatch({
         type: "NEW_CHORE", payload: res
       })
@@ -148,7 +145,6 @@ export function addChore(choreName) {
 
 // -------------create user
 export function createUser(x) {
-  console.log("action fired create user",x)
   return (dispatch) =>{
     return fetch(`${BASE_URL}/api/v1/users`, {
   method: 'POST',
@@ -175,7 +171,7 @@ export function createUser(x) {
     return true
   } else {
 
-    alert(user.message)
+    alert("This email has been taken")
   }
 })
 
@@ -186,7 +182,6 @@ export function createUser(x) {
 
 
 export function logUserIn(data) {
-  console.log("body",data)
 
   return (dispatch) => {
       dispatch({ type: 'LOGGING_IN' });
@@ -202,7 +197,6 @@ export function logUserIn(data) {
 
    .then(res => res.json())
    .then(res => {
-     console.log("response",res)
      if (res.status === 200) {
 
   localStorage.setItem("token", res.jwt)
@@ -219,7 +213,6 @@ export function logUserIn(data) {
 //----------getChores----------------
 
 export function getChores() {
-  console.log("get chore fired")
   let token = localStorage.getItem("token")
   return (dispatch) => {
     return fetch (`${BASE_URL}/api/v1/chores`, {
@@ -233,7 +226,6 @@ export function getChores() {
     })
     .then(response => response.json())
     .then(res => {
-      console.log("getStars", res)
       dispatch({
         type: "GET_CHORES", payload: res
       })
@@ -279,7 +271,6 @@ export function getChores() {
 //-------------get user -----------------------
 
 export const getUser=(token) =>{
-  console.log("getuser action");
   return (dispatch) => {
     dispatch({ type: 'GETTING_USER' });
   return fetch(`${BASE_URL}/api/v1/profile`,{
@@ -291,7 +282,7 @@ export const getUser=(token) =>{
 
     .then(res => res.json())
 
-    .then(res => dispatch({type: 'GET_USER', payload: res
+    .then(res =>  dispatch({type: 'GET_USER', payload: res
   }))
     }
 }
@@ -302,11 +293,8 @@ export const getUser=(token) =>{
 //------------------
 
 export function getUserAgain(id){
-  console.log("getuseragain action", id)
     let token = localStorage.getItem("token")
-    console.log("fired 2")
   return (dispatch) => {
-    console.log("fired 3")
       return fetch(  `${BASE_URL}/api/v1/users/${id}`,{
         method: 'GET',
         headers: {
@@ -319,7 +307,7 @@ export function getUserAgain(id){
       })
     .then(res => res.json())
 
-    .then(res => { dispatch({type: 'GET_USER', payload: res
+    .then(res => { dispatch({type: 'GET_USER_AGAIN', payload: res
 
   }
 )
@@ -331,45 +319,11 @@ export function getUserAgain(id){
 
 //-----------------addChild--------------
 
-// export function addChild(data) {
-//   console.log("addChild Action fired", data)
-//   let token = localStorage.getItem("token")
-//   return (dispatch => {
-//   dispatch ({
-//     type:"MAKING_KID"
-//   });
-//     return fetch("http://localhost:3000/api/v1/kids", {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json',
-//         'Accept': 'application/json',
-//           Authorization: `Bearer ${token}`
-//
-//       },
-//       body: JSON.stringify({
-//         first_name: data.firstName,
-//         last_name: data.lastName,
-//         birthday: data.birthday,
-//         user_id: data.user_id,
-//         stars: [{
-//           url: [],
-//         color: "",
-//       id: "" }]
-//
-//       })
-//     })
-//     .then(response => response.json())
-//     .then(res =>
-//        dispatch ({
-//       type: 'CREATE_KID', payload: res
-//     }))
-//   })
-// }
 
 export function addChild(data) {
-  console.log("addChild Action fired", data)
+
   let token = localStorage.getItem("token")
-  return (dispatch => {
+  return ( (dispatch) => {
   dispatch ({
     type:"LOADING_MAKING_KID"
   });
@@ -385,26 +339,51 @@ export function addChild(data) {
         first_name: data.firstName,
         last_name: data.lastName,
         birthday: data.birthday,
-        user_id: data.user_id
+        user_id: data.userId
 
       })
     })
     .then(res => res.json())
 
-    .then(res =>
+    .then(res => {
+
       dispatch({
         type:'CREATE_KID', payload: res
       })
 
-    )
+    })
+
     }
   )
+}
+
+export function deslectUser() {
+  return ((dispatch) => {
+    dispatch({
+
+      type: 'LOADING_CATS'
+
+    })
+  dispatch({
+
+    type: 'DESELECT_USER', payload: false
+
+  })
+  })
+}
+
+export function deselectChore() {
+  return ((dispatch) => {
+  dispatch({
+    type: 'DESELECT_CHORE', payload: false
+  })
+  })
 }
 
 //-------------------getKid--------------
 
 // export const getKid=(id) =>{
-//   console.log("getKID action", id);
+
 //   return (dispatch) => {
 //     dispatch({ type: 'GETTING_KID', payload: id });
 //
@@ -415,7 +394,7 @@ export function addChild(data) {
 // }
 
 export const getKid=(id) =>{
-  console.log("getKID action", id);
+
     let token = localStorage.getItem("token")
   return (dispatch) => {
     dispatch({ type: 'LOADING_CATS' });
@@ -438,7 +417,7 @@ export const getKid=(id) =>{
 
 
     export const selectedKid=(id) =>{
-      console.log("getK ID action", id);
+
         let token = localStorage.getItem("token")
       return (dispatch) => {
         dispatch({ type: 'LOADING_CATS' });
@@ -461,7 +440,7 @@ export const getKid=(id) =>{
 
 
         export const deleteChild= (id) => {
-          console.log("action fired", id)
+
             let token = localStorage.getItem("token")
             return (dispatch) => {
 
@@ -481,7 +460,7 @@ export const getKid=(id) =>{
 
 
 export const logUserOut = () => {
-  console.log("loguserout  fired")
+
   return (dispatch) => {
     dispatch({
       type: "LOG_USER_OUT", payload: {}

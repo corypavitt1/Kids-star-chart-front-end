@@ -11,11 +11,13 @@ import {submitForm} from '../actions/action.js'
 import {getckss} from '../actions/action.js'
 import {getKid} from '../actions/action.js'
 import WOW from 'wow.js';
+import Kid from '../components/Kid.js'
 
 class Home extends Component {
 
 state={
-  toggle: false
+  toggle: false,
+  choresSelected: this.props.choresSelected
 
 }
 
@@ -43,17 +45,18 @@ buttonClick = () => {
 
 
 
-    console.log("Home fired", this.props)
+
 
     if (this.props.choresSelected) {
-      console.log("yes")
+
       return (
 
         <div>
         <Navbar/>
 
             <div className="home">
-                        <Chores family={this.props.user} getChores={this.props.getChores}/>
+                        <Chores family={this.props.user} getChores={this.props.getChores} choresSelected={this.state.choresSelected}/>
+
         </div>
 
 
@@ -67,13 +70,14 @@ buttonClick = () => {
 
     if (this.props.kidSelected) {
 
-      console.log("yes")
+
       return (
 
         <div >
 
         <Navbar/>
             <div className="home">
+            
                         <KidInfo getSelectedKid={this.props.getSelectedKid} isLoading={this.props.isLoading} getckss={this.props.getckss}  getck={this.props.getck} userKids={this.props.user.kids} chores={this.props.getChores} stars={this.props.stars} submitForm={this.props.submitForm}/>
         </div>
 
