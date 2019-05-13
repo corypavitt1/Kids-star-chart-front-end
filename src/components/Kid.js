@@ -51,11 +51,9 @@ componentDidUpdate(prevProps) {
 
 
 
-handleSortByStarsClick = () => {
+handleSortByStarsClick = () => { // You don't know JS by Kyle Simpson -> Scope and Closures
 console.log("this",this)
-  this.setState({
-    showSorted: !this.state.showSorted
-  })
+
 
 let obj = [...this.props.userKids]
 
@@ -65,7 +63,8 @@ let obj = [...this.props.userKids]
   })
 
   this.setState({
-    sortedArray: obj
+    sortedArray: obj,
+    showSorted: !this.state.showSorted
   })
 }
 
