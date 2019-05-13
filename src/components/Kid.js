@@ -46,38 +46,21 @@ componentDidUpdate(prevProps) {
 
 	}
 
-  handleSortbyNameClick = (e) => {
 
-    this.setState({
-      showSortedByName: !this.state.showSortedByName
-    })
-    this.callSortedAZ()
-  }
-
-  callSortedAZ= () => {
-    let key = [...this.props.userKids]
-
-    key.sort(function (a,b) {
-      return b.stars.length - a.stars.length
-    })
-    this.setState({
-      sortedArray: key
-    })
-
-  }
 
 
 
 
 handleSortByStarsClick = () => {
-
+console.log("this",this)
   this.setState({
     showSorted: !this.state.showSorted
   })
 
 let obj = [...this.props.userKids]
 
-  obj.sort(function (a,b) {
+  obj.sort(function (a,b)  {// mutates the original: sort, splice, pop, shift
+
     return b.stars.length - a.stars.length
   })
 
@@ -163,7 +146,7 @@ render() {
 {!this.props.isLoadingStars ? kids() : kid()}
 
 <div>
-        <button type="button" className="sortButton btn btn-outline-danger" onClick={(e)=> this.handleSortByStarsClick(e)}>{!this.state.showSorted ? "Sort by Stars" : "Unsort by Stars"}</button>
+        <button type="button" className="sortButton btn btn-outline-danger" onClick={this.handleSortByStarsClick}>{!this.state.showSorted ? "Sort by Stars" : "Unsort"}</button>
 
       </div>
       <button type="button" className ="btn btn-outline-danger" onClick={(e) => this.handleDeleteClick(e)}>
